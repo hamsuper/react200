@@ -1,19 +1,13 @@
 import './App.css';
-import R018_PropsDatatype from './R018_PropsDatatype';
+import R019_PropsBoolean from './R019_PropsBoolean';
 
 function App() {
   return (
 		<div>
 			<h1>Start React 200!</h1>
 			<p>CSS 적용하기</p>
-			<R018_PropsDatatype
-				String="react"
-				Number={200}
-				Boolean={1 == 1}
-				Array={[0, 1, 8]}
-				ObjectJson={{ react: '리액트', twohundred: '200' }}
-				Function={console.log('FunctionProps: function!')}
-			/>
+      <R019_PropsBoolean BooleanTrueFalse={false} />
+      <R019_PropsBoolean BooleanTrueFalse />
 		</div>
   );
 }
