@@ -1,12 +1,12 @@
 import './App.css';
-import R015_Map from './R015_Map';
+import R016_Jquery from './R016_Jquery';
 
 function App() {
   return (
 		<div>
 			<h1>Start React 200!</h1>
 			<p>CSS 적용하기</p>
-			<R015_Map />
+			<R016_Jquery />
 		</div>
   );
 }
