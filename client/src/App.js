@@ -1,13 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
-import R003_ImportConponent from './R003_ImportConponent';
+import R004_LifecycleEx from './R004_LifecycleEx';
 
 function App() {
   return (
     <div>
       <h1>Start React 200!</h1>
       <p>CSS 적용하기</p>
-      <R003_ImportConponent></R003_ImportConponent>
+      <R004_LifecycleEx></R004_LifecycleEx>
     </div>
   );
 }
