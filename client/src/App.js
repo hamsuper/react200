@@ -1,12 +1,12 @@
 import './App.css';
-import R011_SpreadOperator from './R011_SpreadOperator';
+import R012_ClassPrototype from './R012_Class&prototype';
 
 function App() {
   return (
 		<div>
 			<h1>Start React 200!</h1>
 			<p>CSS 적용하기</p>
-			<R011_SpreadOperator />
+			<R012_ClassPrototype />
 		</div>
   );
 }
