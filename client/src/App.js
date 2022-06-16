@@ -1,13 +1,12 @@
 import './App.css';
-import R019_PropsBoolean from './R019_PropsBoolean';
+import R020_PropsObjVal from './R020_PropsObjVal';
 
 function App() {
   return (
 		<div>
 			<h1>Start React 200!</h1>
 			<p>CSS 적용하기</p>
-      <R019_PropsBoolean BooleanTrueFalse={false} />
-      <R019_PropsBoolean BooleanTrueFalse />
+			<R020_PropsObjVal ObjectJson={{react:'리액트', twohundred:'200'}} />
 		</div>
   );
 }
