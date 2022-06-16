@@ -1,12 +1,12 @@
 import './App.css';
-import R025_SetState from './R025_SetState';
+import R026_ForceUpdate from './R026_ForceUpdate';
 
 function App() {
   return (
 		<div>
 			<h1>Start React 200!</h1>
 			<p>CSS 적용하기</p>
-			<R025_SetState />
+			<R026_ForceUpdate />
 		</div>
   );
 }
