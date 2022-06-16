@@ -1,12 +1,12 @@
 import './App.css';
-import R024_ReactState from './R024_ReactState';
+import R025_SetState from './R025_SetState';
 
 function App() {
   return (
 		<div>
 			<h1>Start React 200!</h1>
 			<p>CSS 적용하기</p>
-      <R024_ReactState reactString={'react'}/>
+			<R025_SetState />
 		</div>
   );
 }
