@@ -1,12 +1,14 @@
 import './App.css';
-import R022_PropsDefault from './R022_PropsDefault';
+import R023_PropsNode from './R023_PropsNode';
 
 function App() {
   return (
 		<div>
 			<h1>Start React 200!</h1>
 			<p>CSS 적용하기</p>
-			<R022_PropsDefault ReactNumber={200} />
+      <R023_PropsNode>
+        <span>node from App.js</span>
+      </R023_PropsNode>
 		</div>
   );
 }
