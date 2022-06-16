@@ -1,12 +1,12 @@
 import './App.css';
-import R020_PropsObjVal from './R020_PropsObjVal';
+import R021_PropsRequired from './R021_PropsRequired';
 
 function App() {
   return (
 		<div>
 			<h1>Start React 200!</h1>
 			<p>CSS 적용하기</p>
-			<R020_PropsObjVal ObjectJson={{react:'리액트', twohundred:'200'}} />
+			<R021_PropsRequired ReactNumber={200} />
 		</div>
   );
 }
