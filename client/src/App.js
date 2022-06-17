@@ -1,12 +1,12 @@
 import './App.css';
-import R028_PureComponentClass from './R028_PureComponentClass';
+import R029_ShallowEqual from './R029_ShallowEqual';
 
 function App() {
   return (
 		<div>
 			<h1>Start React 200!</h1>
 			<p>CSS 적용하기</p>
-			<R028_PureComponentClass />
+			<R029_ShallowEqual />
 		</div>
   );
 }
