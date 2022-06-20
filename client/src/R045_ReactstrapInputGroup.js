@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { InputGroup, InputGroupText, Input, Button } from 'reactstrap';
+import { InputGroup, InputGroupText, Input, Button, InputGroupAddon } from 'reactstrap';
 
 export default class R045_ReactstrapInputGroup extends Component {
   render() {
