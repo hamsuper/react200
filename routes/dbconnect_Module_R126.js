@@ -5,10 +5,8 @@ const bodyParser = require('body-parser');
 
 router.use(bodyParser.json());
 
-// Connection Pool 세팅
-const pool = mysql.createPool({
-	connectionLimit: 66,
-	waitForConnections: true,
+//mysql 서버 접속 정보
+const connection = mysql.createConnection({
 	host: 'database-1.cftrphdao14s.us-west-1.rds.amazonaws.com',
 	port: '3306',
 	database: 'react',
@@ -31,32 +29,20 @@ router.post('/', (req, res) => {
 	var query = mybatisMapper.getStatement(param.mapper, param.mapper_id, param, format);
 	console.log('\n========= Node Mybatis Query Log Start =========');
 	console.log('* mapper namespce : ' + param.mapper + '.' + param.mapper_id + ' *\n');
-  console.log(query + '\n');
-  
-  pool.getConnection(function (err, connection) {
-		connection.query(query, function (error, results) {
-			if (error) {
-				console.log('db error************* : ' + error);
-			}
-			var time2 = new Date();
-			console.log('## ' + time2 + ' ##');
-			console.log('## RESULT DATA LIST ## : \n', results);
-			if (results != undefined) {
-				string = JSON.stringify(results);
-				var json = JSON.parse(string);
-				if (req.body.crud == 'select') {
-					res.send({ json });
-				} else {
-					res.send('succ');
-				}
-			} else {
-				res.send('error');
-			}
+	console.log(query + '\n');
 
-			connection.release();
-			console.log('========= Node Mybatis Query Log End =========\n');
-		});
-  });
+	connection.query(query, function (error, results) {
+		if (error) {
+			console.log('db error************* : ' + error);
+		}
+		var time2 = new Date();
+		console.log('## ' + time2 + ' ##');
+		console.log('## RESULT DATA LIST ## : \n', results);
+		string = JSON.stringify(results);
+		var json = JSON.parse(string);
+		res.send({ json });
+		console.log('========= Node Mybatis Query Log End =========\n');
+	});
 });
 
 module.exports = router;
