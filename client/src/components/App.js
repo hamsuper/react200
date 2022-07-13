@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Route } from 'react-router-dom';
-import R111_ApiPostJson from './R111_ApiPostJson';
+import SoftwareList from './SoftwareToolsManage/SoftwareList';
 
 // css
 import '../css/new.css';
@@ -16,7 +16,7 @@ export default class App extends Component {
     return (
 		<div className="App">
 			<Header />
-			<Route exact path="/apiPostJson" component={R111_ApiPostJson} />
+			<Route exact path="/SoftwareList" component={SoftwareList} />
 			<Footer />
 		</div>
 	);
