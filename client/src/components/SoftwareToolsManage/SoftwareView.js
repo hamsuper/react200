@@ -2,8 +2,48 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import $ from 'jquery';
 import Swal from 'sweetalert2';
+import axios from 'axios';
 
 class SoftwareView extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			before_swtcode: props.match.params.swtcode,
+		};
+	}
+
+	componentDidMount() {
+		if (this.state.before_swtcode == 'register') {
+			$('.modifyclass').hide();
+		} else {
+			this.callSwToolInfoApi();
+			$('.saveclass').hide();
+		}
+	}
+
+	callSwToolInfoApi = async () => {
+		axios
+			.post('/api/Swtool?type=list', {
+				is_Swtcode: this.state.before_swtcode,
+			})
+			.then((response) => {
+				try {
+					var data = response.data.json[0];
+					$('#is_Swt_toolname').val(data.swt_toolname);
+					$('#is_Swt_demo_site').val(data.swt_demo_site);
+					$('#is_Giturl').val(data.swt_github_url);
+					$('#is_Comments').val(data.swt_comments);
+					$('#is_Swt_function').val(data.swt_function);
+				} catch (error) {
+					alert('작업중 오류가 발생하였습니다.');
+				}
+			})
+			.catch((error) => {
+				alert('작업중 오류가 발생하였습니다.');
+				return false;
+			});
+	};
+
 	submitClick = async (type, e) => {
 		this.Swt_toolname_checker = $('#is_Swt_toolname').val();
 		this.Swt_demo_site_checker = $('#is_Swt_demo_site').val();
@@ -255,7 +295,13 @@ class SoftwareView extends Component {
 											onClick={(e) => this.submitClick('save', e)}>
 											저장
 										</a>
-									</div>
+										<a
+											href="javascript:"
+											className="bt_ty bt_ty2 submit_ty1 modifyclass"
+											onClick={(e) => this.submitClick('modify', e)}>
+											수정
+										</a>
+									</div> 
 								</div>
 							</article>
 						</form>

@@ -18,7 +18,7 @@ export default class App extends Component {
 		<div className="App">
 			<Header />
 			<Route exact path="/SoftwareList" component={SoftwareList} />
-			<Route exact path="/SoftwareView" component={SoftwareView} />
+			<Route exact path="/SoftwareView/:swtcode" component={SoftwareView} />
 			<Footer />
 		</div>
 	);

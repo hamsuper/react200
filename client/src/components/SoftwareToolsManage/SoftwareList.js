@@ -84,7 +84,7 @@ export default class SoftwareList extends Component {
 					<div className="li_top">
 						<h2 className="s_tit1">Software Tools 목록</h2>
 						<div className="li_top_sch af">
-							<Link to={'/AdminSoftwareView/register'} className="sch_bt2 wi_au">
+							<Link to={'/SoftwareView/register'} className="sch_bt2 wi_au">
 								Tool 등록
 							</Link>
 						</div>
