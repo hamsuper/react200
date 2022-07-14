@@ -61,5 +61,5 @@
       , DATE_FORMAT(now(), '%Y%m%d%H%i%s')
       , #{is_Email}
     )
-  </insert>
+  </insert>  
 </mapper>
